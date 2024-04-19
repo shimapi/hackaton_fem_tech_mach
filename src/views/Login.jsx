@@ -1,6 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 function Login() {
   return (
@@ -21,6 +22,7 @@ function Login() {
         <Col sm="10">
           <Form.Control type="password" placeholder="Password" />
         </Col>
+        <Button variant="primary">Ingresar</Button>{" "}
       </Form.Group>
     </Form>
   );
