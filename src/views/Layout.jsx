@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Initial from "./Initial";
 
 const Layout = () => {
 	const divRef = useRef(null);

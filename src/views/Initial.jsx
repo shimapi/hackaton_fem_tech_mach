@@ -1,4 +1,5 @@
 import { Container, Typography, Button, Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 import imagen from '../assets/images/people.png';
 
 
@@ -12,18 +13,22 @@ const Initial = () => {
             <Typography variant="body1" align="center" paragraph>
                 Donde tenemos espacio para todos
             </Typography>
-            <img src={imagen} align="center" style={{ width:'350px' }} alt="gente" />
+            <img src={imagen} align="center" style={{ width: '350px' }} alt="gente" />
             <div style={{ marginBottom: '50px' }}></div>
             <Grid container justifyContent="center" spacing={2}>
                 <Grid item>
-                    <Button variant="contained" color="primary" size="large">
-                        quiero ser parte
-                    </Button>
+                    <Link to="/register">
+                        <Button variant="contained" color="primary" size="large">
+                            quiero ser parte
+                        </Button>
+                    </Link>
                 </Grid>
                 <Grid item>
-                    <Button variant="outlined" color="primary" size="large">
-                        Ya tengo cuenta
-                    </Button>
+                    <Link to="/login">
+                        <Button variant="outlined" color="primary" size="large">
+                            Ya tengo cuenta
+                        </Button>
+                    </Link>
                 </Grid>
             </Grid>
             <footer style={{ marginTop: '50px' }}>
