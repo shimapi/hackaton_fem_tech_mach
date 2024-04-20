@@ -2,8 +2,10 @@ import { useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 import MachIgm from "../components/Card";
 import { validateRut } from "rutlib";
+import { Link } from "react-router-dom";
+import PathConstants from "../Routes/PathConstants";
 
-const RegisterSecond = () => {
+const Identification = () => {
 	const [rut, setRut] = useState("");
 
 	const handleRutChange = (event) => {
@@ -34,18 +36,20 @@ const RegisterSecond = () => {
 				) : (
 					<p style={{ color: "red" }}>Por favor ingresa un rut Válido</p>
 				)}
-				<Button
-					type="submit"
-					variant="contained"
-					color="primary"
-					fullWidth
-					disabled={!validateRut(rut)}
-				>
-					Registrarte
-				</Button>
+				<Link to={PathConstants.HOME}>
+					<Button
+						type="submit"
+						variant="contained"
+						color="primary"
+						fullWidth
+						disabled={!validateRut(rut)}
+					>
+						Registrarte
+					</Button>
+				</Link>
 			</form>
 		</>
 	);
 };
 
-export default RegisterSecond;
+export default Identification;
