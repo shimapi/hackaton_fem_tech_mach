@@ -10,6 +10,7 @@ import Layout from "./views/Layout";
 import PathConstants from "./Routes/PathConstants";
 import Initial from "./views/Initial";
 import Identification from "./views/Identification";
+import Transferencias from "./views/Transferencias";
 
 function App() {
 	const BrowserRouter = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
 				{
 					path: PathConstants.HOME,
 					element: <Home />,
+				},
+				{
+					path: PathConstants.TRANSFERENCIAS,
+					element: <Transferencias />,
 				},
 				{
 					path: "*",

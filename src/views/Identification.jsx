@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextField, Button, Typography } from "@mui/material";
+import { TextField, Button, Typography, Container } from "@mui/material";
 import MachIgm from "../components/Card";
 import { validateRut } from "rutlib";
 import { Link } from "react-router-dom";
@@ -18,36 +18,38 @@ const Identification = () => {
 	};
 	return (
 		<>
-			<MachIgm />
-			<Typography variant="h5" align="center" gutterBottom>
-				¿Cuál es tu RUT?
-			</Typography>
-			<form onSubmit={handleSubmit}>
-				<TextField
-					label="RUT"
-					value={rut}
-					onChange={handleRutChange}
-					fullWidth
-					margin="normal"
-					placeholder="Ingresa tu RUT"
-				/>
-				{validateRut(rut) ? (
-					<p style={{ color: "green" }}>RUT válido</p>
-				) : (
-					<p style={{ color: "red" }}>Por favor ingresa un rut Válido</p>
-				)}
-				<Link to={PathConstants.HOME}>
-					<Button
-						type="submit"
-						variant="contained"
-						color="primary"
+			<Container maxWidth="sm" style={{ marginTop: "50px" }}>
+				<MachIgm />
+				<Typography variant="h5" align="center" gutterBottom>
+					¿Cuál es tu RUT?
+				</Typography>
+				<form onSubmit={handleSubmit}>
+					<TextField
+						label="RUT"
+						value={rut}
+						onChange={handleRutChange}
 						fullWidth
-						disabled={!validateRut(rut)}
-					>
-						Registrarte
-					</Button>
-				</Link>
-			</form>
+						margin="normal"
+						placeholder="Ingresa tu RUT"
+					/>
+					{validateRut(rut) ? (
+						<p style={{ color: "green" }}>RUT válido</p>
+					) : (
+						<p style={{ color: "red" }}>Por favor ingresa un rut Válido</p>
+					)}
+					<Link to={PathConstants.HOME}>
+						<Button
+							type="submit"
+							variant="contained"
+							color="primary"
+							fullWidth
+							disabled={!validateRut(rut)}
+						>
+							Registrarte
+						</Button>
+					</Link>
+				</form>
+			</Container>
 		</>
 	);
 };

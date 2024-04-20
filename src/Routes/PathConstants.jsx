@@ -5,6 +5,7 @@ const PathConstants = {
 	REGISTER: "/register",
 	IDENTIFICATION: "/identification",
 	HOME: "/home",
+	TRANSFERENCIAS: "/transferencias",
 };
 
 export default PathConstants;
