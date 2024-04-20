@@ -31,7 +31,7 @@ export default function Transferencias() {
 					<TableHead backgroundColor="secondary">
 						<TableRow>
 							<TableCell>Fecha</TableCell>
-							<TableCell align="right">Pago enviado</TableCell>
+							<TableCell align="left">Pago enviado</TableCell>
 							<TableCell align="right">Monto</TableCell>
 						</TableRow>
 					</TableHead>
