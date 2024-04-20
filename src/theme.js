@@ -9,7 +9,7 @@ const theme = createTheme({
         secondary: {
             main: colors.secondary
         }
-        //Override colors from palete as needed
+        //Add more
     },
 });
 
