@@ -1,10 +1,24 @@
-import Card from "react-bootstrap/Card";
+import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import logo from "../assets/images/logo-mach.png";
+import { Container } from 'react-bootstrap';
+
 function MachIgm() {
   return (
-    <Card className="bg-dark ">
-      <Card.Img src={logo} alt="Card image" width="10%"/>
+    <Container style={{ alignContent:'center' }} > 
+    <Card style={{ boxShadow: 'none' }}>
+      <CardMedia
+        component="img"
+        image={logo}
+        alt="mach"
+        style={{ maxWidth: '350px' }}
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          Banca digital para todos
+        </Typography>
+      </CardContent>
     </Card>
+    </Container>
   );
 }
 

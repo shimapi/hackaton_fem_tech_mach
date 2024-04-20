@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import { TextField, Button } from "@mui/material";
+import { Container, Typography, TextField, Button } from "@mui/material";
 import MachIgm from "../components/Card";
 
 const Login = () => {
@@ -22,8 +22,9 @@ const Login = () => {
 	};
 
 	return (
-		<>
+		<Container maxWidth="sm" style={{ marginTop: '50px' }}>
 			<MachIgm />
+			<div style={{ marginBottom: '10px' }}></div>
 			<form onSubmit={handleSubmit}>
 				<TextField
 					label="Correo electrónico"
@@ -46,32 +47,14 @@ const Login = () => {
 					</Button>
 				</Link>
 			</form>
-		</>
+			<div style={{ marginBottom: '20px' }}></div>
+			<Link to="/otra-ruta">
+				<Typography variant="body2" component="span">
+					Olvide mi contraseña
+				</Typography>
+			</Link>
+		</Container>
 	);
 };
 
 export default Login;
-
-/**
- * <!--
-	  <MachIgm />
-	  <Form>
-		<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-		  <Form.Label column sm="2">
-			Email
-		  </Form.Label>
-		  <Col sm="10">
-			<Form.Control placeholder="email@example.com" />
-		  </Col>
-		</Form.Group>
-		<Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-		  <Form.Label column sm="2">
-			Password
-		  </Form.Label>
-		  <Col sm="10">
-			<Form.Control type="password" placeholder="Password" />
-		  </Col>
-		</Form.Group>
-	    
-	  </Form>
- */
