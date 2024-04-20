@@ -1,7 +1,11 @@
-export const theme = {
-    colors: {
-      primary: '#007bff',
-      secondary: '#6c757d',
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#ff0000', // Cambia el color primario a rojo
+        },
     },
-    // Add more theme tokens like fonts, spacing, etc.
-  };
+});
+
+export default theme;

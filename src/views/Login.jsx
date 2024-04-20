@@ -1,8 +1,10 @@
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 import MachIgm from "../components/Card";
+
+import Button from '@mui/material/Button';
+
 function Login() {
   return (
     <>
@@ -24,8 +26,11 @@ function Login() {
             <Form.Control type="password" placeholder="Password" />
           </Col>
         </Form.Group>
-        <Button variant="primary">Ingresar</Button>{" "}
+        
       </Form>
+      <Button variant="contained" color="primary">
+        Ingresar
+      </Button>
     </>
   );
 }
