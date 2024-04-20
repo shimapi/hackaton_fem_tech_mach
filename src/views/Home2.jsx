@@ -27,7 +27,7 @@ const Home2 = () => {
 									Saldo de cuenta
 								</Typography>
 								<Typography variant="h4" component="div">
-									${saldoCuenta.toFixed(2)}
+									${saldoCuenta}
 								</Typography>
 							</CardContent>
 						</Card>
