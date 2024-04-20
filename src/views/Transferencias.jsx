@@ -76,6 +76,7 @@ export default function Transferencias() {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			<br />
 			<Pagination
 				count={Math.ceil(rows.length / itemsPerPage)}
 				color="primary"
