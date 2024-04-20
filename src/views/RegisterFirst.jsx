@@ -29,6 +29,21 @@ const RegisterFirst = () => {
 		console.log("email:", email);
 	};
 
+	const validateEmail = (email) => {
+		const re = /\S+@\S+\.\S+/;
+		console.log(re.test(email));
+		return re.test(email);
+	};
+
+	const allFieldsAreValid = () => {
+		return (
+			name.length >= 3 &&
+			lastname.length >= 3 &&
+			phone.length >= 9 &&
+			validateEmail(email)
+		);
+	};
+
 	return (
 		<>
 			<MachIgm />
@@ -43,6 +58,7 @@ const RegisterFirst = () => {
 					fullWidth
 					margin="normal"
 					placeholder="Ingresa tu nombre"
+					error={name.length < 3}
 				/>
 				<TextField
 					label="Lastname"
@@ -50,6 +66,8 @@ const RegisterFirst = () => {
 					onChange={handleLastnameChange}
 					fullWidth
 					margin="normal"
+					placeholder="Ingresa tu apellido"
+					error={lastname.length < 3}
 				/>
 				<TextField
 					label="Teléfono"
@@ -58,6 +76,7 @@ const RegisterFirst = () => {
 					fullWidth
 					margin="normal"
 					placeholder="Ingresa tu nombre"
+					error={phone.length < 9}
 				/>
 				<TextField
 					label="e-mail"
@@ -65,8 +84,15 @@ const RegisterFirst = () => {
 					onChange={handleEmailChange}
 					fullWidth
 					margin="normal"
+					error={!validateEmail(email)}
 				/>
-				<Button type="submit" variant="contained" color="primary" fullWidth>
+				<Button
+					type="submit"
+					variant="contained"
+					color="primary"
+					fullWidth
+					disabled={!allFieldsAreValid()}
+				>
 					Continuar
 				</Button>
 			</form>
