@@ -13,7 +13,7 @@ function Login() {
             Email
           </Form.Label>
           <Col sm="10">
-            <Form.Control plaintext readOnly defaultValue="email@example.com" />
+            <Form.Control placeholder="email@example.com" />
           </Col>
         </Form.Group>
 
