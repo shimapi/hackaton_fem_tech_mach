@@ -6,6 +6,7 @@ const PathConstants = {
 	IDENTIFICATION: "/identification",
 	HOME: "/home",
 	TRANSFERENCIAS: "/transferencias",
+	MOVIMIENTOS: "/movimientos",
 };
 
 export default PathConstants;
