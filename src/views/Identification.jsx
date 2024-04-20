@@ -2,10 +2,13 @@ import { useState } from "react";
 import { TextField, Button, Typography, Container } from "@mui/material";
 import MachIgm from "../components/Card";
 import { validateRut } from "rutlib";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PathConstants from "../Routes/PathConstants";
 
 const Identification = () => {
+	const location = useLocation();
+	const { newUser } = location.state;
+
 	const [rut, setRut] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -64,7 +67,7 @@ const Identification = () => {
 							fullWidth
 							disabled={!validateRut(rut)}
 						>
-							Registrarte
+							Registrate
 						</Button>
 					</Link>
 				</form>

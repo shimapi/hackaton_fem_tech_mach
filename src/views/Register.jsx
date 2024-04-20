@@ -13,6 +13,13 @@ const Register = () => {
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 
+	const newUser = {
+		name: name,
+		lastname: lastname,
+		email: email,
+		phone: phone
+	};
+
 	const handleNameChange = (event) => {
 		setName(event.target.value);
 	};
@@ -25,6 +32,7 @@ const Register = () => {
 	const handleEmailChange = (event) => {
 		setEmail(event.target.value);
 	};
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// Aquí puedes enviar los datos del formulario a través de una solicitud HTTP
@@ -32,7 +40,7 @@ const Register = () => {
 		console.log("lastname:", lastname);
 		console.log("telefono:", phone);
 		console.log("email:", email);
-		navigate(PathConstants.IDENTIFICATION)
+		navigate(PathConstants.IDENTIFICATION, { state: { newUser: newUser } })
 	};
 
 	const validateEmail = (email) => {
