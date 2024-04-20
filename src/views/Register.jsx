@@ -1,7 +1,13 @@
 import RegisterFirst from "./RegisterFirst";
+import RegisterSecond from "./RegisterSecond";
 
 const Register = () => {
-	return <RegisterFirst />;
+	return (
+		<>
+			<RegisterFirst />
+			<RegisterSecond />
+		</>
+	);
 };
 
 export default Register;
