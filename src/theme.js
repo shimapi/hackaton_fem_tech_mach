@@ -1,9 +1,10 @@
 import { createTheme } from '@mui/material/styles';
+import colors from './colors';
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#ff0000', // Cambia el color primario a rojo
+            main: colors.primary
         },
     },
 });
