@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import { Nav } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Nav from "./Nav";
 
 const Layout = () => {
 	const divRef = useRef(null);
@@ -13,9 +13,10 @@ const Layout = () => {
 	}, [location.pathname]);
 
 	return (
-		<div className="app" ref={divRef}>
+		<>
 			<Nav />
-		</div>
+			<Outlet />
+		</>
 	);
 };
 
