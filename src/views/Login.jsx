@@ -16,7 +16,6 @@ function Login() {
             <Form.Control placeholder="email@example.com" />
           </Col>
         </Form.Group>
-
         <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
           <Form.Label column sm="2">
             Password
@@ -24,8 +23,8 @@ function Login() {
           <Col sm="10">
             <Form.Control type="password" placeholder="Password" />
           </Col>
-          <Button variant="primary">Ingresar</Button>{" "}
         </Form.Group>
+        <Button variant="primary">Ingresar</Button>{" "}
       </Form>
     </>
   );
