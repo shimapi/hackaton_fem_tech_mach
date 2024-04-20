@@ -62,7 +62,7 @@ const Login = () => {
 			<div style={{ marginBottom: "20px" }}></div>
 			<Link to="/otra-ruta">
 				<Typography variant="body2" component="span">
-					Olvide mi contraseña
+					Olvidé mi contraseña
 				</Typography>
 			</Link>
 		</Container>

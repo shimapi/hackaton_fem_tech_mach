@@ -2,12 +2,14 @@ import { useState } from "react";
 import { TextField, Button, Typography, Container } from "@mui/material";
 import MachIgm from "../components/Card";
 import { validateRut } from "rutlib";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PathConstants from "../Routes/PathConstants";
+import axios from "axios";
 
-const Identification = () => {
+const Identification = ({ name, lastName, phone, email }) => {
 	const [rut, setRut] = useState("");
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 
 	const handlePasswordChange = (event) => {
 		setPassword(event.target.value);
@@ -17,9 +19,27 @@ const Identification = () => {
 		setRut(event.target.value);
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		// Aquí puedes enviar los datos del formulario a través de una solicitud HTTP
+
+		try {
+			const response = await axios.post("http://localhost:8080/user/register", {
+				name: name,
+				lastName: lastName,
+				idDocument: rut,
+				phone: phone,
+				email: email,
+				password: password,
+			});
+
+			// Manejar la respuesta del servidor
+			console.log("Usuario registrado:", response.data);
+			navigate("/home");
+
+		} catch (error) {
+			console.error("Error al registrar usuario:", error);
+		}
+
 		console.log("rut:", validateRut(rut));
 	};
 	return (
@@ -40,11 +60,11 @@ const Identification = () => {
 					/>
 					{validateRut(rut) ? (
 						<Typography style={{ color: "green" }} gutterBottom>
-							RUT válido
+							RUT válido.
 						</Typography>
 					) : (
 						<Typography style={{ color: "red" }} gutterBottom>
-							Por favor ingresa un rut Válido
+							Por favor ingresa un RUT válido.
 						</Typography>
 					)}
 					<TextField
@@ -53,7 +73,7 @@ const Identification = () => {
 						onChange={handlePasswordChange}
 						fullWidth
 						margin="normal"
-						placeholder="Ingresa una contraseña segura"
+						placeholder="Ingresa una contraseña segura."
 						type="password"
 					/>
 					<Link to={PathConstants.HOME}>
@@ -64,7 +84,7 @@ const Identification = () => {
 							fullWidth
 							disabled={!validateRut(rut)}
 						>
-							Registrarte
+							Registrarme
 						</Button>
 					</Link>
 				</form>
