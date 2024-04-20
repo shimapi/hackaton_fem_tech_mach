@@ -9,7 +9,6 @@ const theme = createTheme({
         secondary: {
             main: colors.secondary
         }
-        //Add more
     },
 });
 

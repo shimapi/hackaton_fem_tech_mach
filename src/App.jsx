@@ -5,7 +5,7 @@ import theme from "./theme";
 import Login from "./views/Login";
 import Page404 from "./views/Page404";
 import Register from "./views/Register";
-import Home from "./views/Home";
+import Home2 from "./views/Home2";
 import Layout from "./views/Layout";
 import PathConstants from "./Routes/PathConstants";
 import Initial from "./views/Initial";
@@ -38,7 +38,7 @@ function App() {
 				},
 				{
 					path: PathConstants.HOME,
-					element: <Home />,
+					element: <Home2 />,
 				},
 				{
 					path: PathConstants.TRANSFERENCIAS,
