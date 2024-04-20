@@ -22,6 +22,12 @@ const Identification = () => {
 		setRut(event.target.value);
 	};
 
+	const allFieldsAreValid = () => {
+		return (
+			validateRut(rut) && password.length>8
+			);
+	};
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
@@ -83,7 +89,7 @@ const Identification = () => {
 						variant="contained"
 						color="primary"
 						fullWidth
-						disabled={!validateRut(rut)}
+						disabled={!allFieldsAreValid()}
 					>
 						Registrarme
 					</Button>
