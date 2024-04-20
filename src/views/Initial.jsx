@@ -35,7 +35,7 @@ const Initial = () => {
                 <Grid container justifyContent="center">
                     <Grid item>
                         <Typography variant="body2" align="center" color="textSecondary">
-                            ¿Necesitas ayuda? Contáctanos.
+                            ¿Necesitas ayuda? Contáctanos al 600 200 2024.
                         </Typography>
                     </Grid>
                 </Grid>

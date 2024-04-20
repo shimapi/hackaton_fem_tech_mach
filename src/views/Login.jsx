@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { TextField, Button } from "@mui/material";
 import MachIgm from "../components/Card";
 
@@ -39,9 +40,11 @@ const Login = () => {
 					fullWidth
 					margin="normal"
 				/>
-				<Button type="submit" variant="contained" color="primary" fullWidth>
-					Ingresar
-				</Button>
+				<Link to="/home">
+					<Button type="submit" variant="contained" color="primary" fullWidth>
+						Ingresar
+					</Button>
+				</Link>
 			</form>
 		</>
 	);
@@ -51,24 +54,24 @@ export default Login;
 
 /**
  * <!--
-      <MachIgm />
-      <Form>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-          <Form.Label column sm="2">
-            Email
-          </Form.Label>
-          <Col sm="10">
-            <Form.Control placeholder="email@example.com" />
-          </Col>
-        </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-          <Form.Label column sm="2">
-            Password
-          </Form.Label>
-          <Col sm="10">
-            <Form.Control type="password" placeholder="Password" />
-          </Col>
-        </Form.Group>
-        
-      </Form>
+	  <MachIgm />
+	  <Form>
+		<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+		  <Form.Label column sm="2">
+			Email
+		  </Form.Label>
+		  <Col sm="10">
+			<Form.Control placeholder="email@example.com" />
+		  </Col>
+		</Form.Group>
+		<Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+		  <Form.Label column sm="2">
+			Password
+		  </Form.Label>
+		  <Col sm="10">
+			<Form.Control type="password" placeholder="Password" />
+		  </Col>
+		</Form.Group>
+	    
+	  </Form>
  */

@@ -3,6 +3,7 @@ const PathConstants = {
 	INITIAL: "/",
 	LOGIN: "/login",
 	REGISTER: "/register",
+	IDENTIFICATION: "/identification",
 	HOME: "/home",
 };
 

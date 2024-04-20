@@ -27,6 +27,10 @@ function App() {
           element: <Register />,
         },
         {
+          path: PathConstants.IDENTIFICATION,
+          element: <Register />,
+        },
+        {
           path: PathConstants.LOGIN,
           element: <Login />,
         },
