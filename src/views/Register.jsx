@@ -64,7 +64,7 @@ const Register = () => {
 						placeholder="Ingresa tu nombre"
 					/>
 					<TextField
-						label="Lastname"
+						label="Apellido"
 						value={lastname}
 						onChange={handleLastnameChange}
 						fullWidth
@@ -72,12 +72,12 @@ const Register = () => {
 						placeholder="Ingresa tu apellido"
 					/>
 					<TextField
-						label="Teléfono"
+						label="Celular"
 						value={phone}
 						onChange={handlePhoneChange}
 						fullWidth
 						margin="normal"
-						placeholder="Ingresa tu nombre"
+						placeholder="Ingresa tu celular"
 					/>
 					<TextField
 						label="e-mail"
