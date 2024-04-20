@@ -11,6 +11,7 @@ import PathConstants from "./Routes/PathConstants";
 import Initial from "./views/Initial";
 import Identification from "./views/Identification";
 import Transferencias from "./views/Transferencias";
+import Movimientos from "./views/Movimientos";
 
 function App() {
 	const BrowserRouter = createBrowserRouter([
@@ -43,6 +44,10 @@ function App() {
 				{
 					path: PathConstants.TRANSFERENCIAS,
 					element: <Transferencias />,
+				},
+				{
+					path: PathConstants.MOVIMIENTOS,
+					element: <Movimientos />,
 				},
 				{
 					path: "*",

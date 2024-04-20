@@ -13,25 +13,26 @@ function createData(date, payment, amount) {
 }
 
 const rows = [
-	createData("17 Marzo 2024", "Juanita Perez", "$ 100.000"),
-	createData("20 Abril 2024", "Claudia Inostroza", "$ 10.000"),
-	createData("25 Mayo 2024", "Juanita Perez", "$ 50.000"),
-	createData("30 Junio 2024", "Margarita Perez", "$ 10.000"),
+	createData("17 Marzo 2024", "Compra en OXXO", "$ 12.320"),
+	createData("20 Abril 2024", "Ahorro para Casa", "$ 120.000"),
+	createData("25 Mayo 2024", "Compra en Zara", "$ 30.990"),
+	createData("29 Junio 2024", "Compra en J&N", "$ 24.310"),
+	createData("30 Junio 2024", "Compra en H&M", "$ 54.330"),
 ];
 
-export default function Transferencias() {
+export default function Movimientos() {
 	return (
 		<Container maxWidth="sm" style={{ marginTop: "50px" }}>
 			<MachIgm />
 			<Typography variant="h5" align="center" gutterBottom>
-				Mis Transferencias
+				Mis Movimientos
 			</Typography>
 			<TableContainer component={Paper}>
 				<Table aria-label="simple table">
 					<TableHead backgroundColor="secondary">
 						<TableRow>
 							<TableCell>Fecha</TableCell>
-							<TableCell align="left">Pago enviado</TableCell>
+							<TableCell align="left">Movimiento</TableCell>
 							<TableCell align="right">Monto</TableCell>
 						</TableRow>
 					</TableHead>
