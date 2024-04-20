@@ -1,5 +1,42 @@
+import { Container, Typography, Button, Grid } from '@mui/material';
+import imagen from '../assets/images/people.png';
+
+
 const Initial = () => {
-	return <div>Initial por definir</div>;
+    return (
+        <Container maxWidth="sm" style={{ marginTop: '50px' }}>
+            <Typography variant="h4" align="right" gutterBottom>
+                Bienvenido a la primera banca digital de Chile
+            </Typography>
+            <div style={{ marginBottom: '50px' }}></div>
+            <Typography variant="body1" align="center" paragraph>
+                Donde tenemos espacio para todos
+            </Typography>
+            <img src={imagen} align="center" style={{ width:'350px' }} alt="gente" />
+            <div style={{ marginBottom: '50px' }}></div>
+            <Grid container justifyContent="center" spacing={2}>
+                <Grid item>
+                    <Button variant="contained" color="primary" size="large">
+                        quiero ser parte
+                    </Button>
+                </Grid>
+                <Grid item>
+                    <Button variant="outlined" color="primary" size="large">
+                        Ya tengo cuenta
+                    </Button>
+                </Grid>
+            </Grid>
+            <footer style={{ marginTop: '50px' }}>
+                <Grid container justifyContent="center">
+                    <Grid item>
+                        <Typography variant="body2" align="center" color="textSecondary">
+                            ¿Necesitas ayuda? Contáctanos.
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </footer>
+        </Container>
+    )
 };
 
 export default Initial;
