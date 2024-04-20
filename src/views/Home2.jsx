@@ -19,14 +19,16 @@ import { Link as RouterLink } from "react-router-dom";
 const saldoCuenta = 5000; // Ejemplo de saldo de la cuenta
 
 const Home2 = () => {
-	const usuario = "Nombre del Usuario"; // cambiar al nombre del
+	const user = JSON.parse(localStorage.getItem("user"));
+	console.log(user);
+	const username = user.name;
 
 	return (
 		<div>
 			<AppBar position="static">
 				<Container maxWidth="lg">
 					<Toolbar>
-						<Typography variant="body2">Hola, {usuario}!</Typography>
+						<Typography variant="body2">¡Hola, {username}!</Typography>
 					</Toolbar>
 				</Container>
 			</AppBar>

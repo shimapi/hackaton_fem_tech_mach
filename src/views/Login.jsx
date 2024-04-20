@@ -26,7 +26,7 @@ const Login = () => {
 
 			// Manejar la respuesta del servidor
 			console.log("Respuesta del servidor:", response.data);
-			localStorage.setItem("user", response.data);
+			localStorage.setItem("user", JSON.stringify(response.data));
 			navigate("/home");
 		} catch (error) {
 			// Manejar cualquier error que ocurra durante la solicitud
