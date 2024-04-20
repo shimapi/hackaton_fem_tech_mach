@@ -51,6 +51,7 @@ const Login = () => {
 					label="Contraseña"
 					value={password}
 					onChange={handlePasswordChange}
+					type="password"
 					fullWidth
 					margin="normal"
 				/>
