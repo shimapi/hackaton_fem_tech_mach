@@ -6,6 +6,10 @@ const theme = createTheme({
         primary: {
             main: colors.primary
         },
+        secondary: {
+            main: colors.secondary
+        }
+        //Override colors from palete as needed
     },
 });
 
