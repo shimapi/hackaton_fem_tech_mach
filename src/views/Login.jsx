@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Container, Typography, TextField, Button } from "@mui/material";
 import MachIgm from "../components/Card";
 import axios from "axios";
+import PathConstants from "../Routes/PathConstants";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ const Login = () => {
 			// Manejar la respuesta del servidor
 			console.log("Respuesta del servidor:", response.data);
 			localStorage.setItem("user", JSON.stringify(response.data));
-			navigate("/home");
+			navigate(PathConstants.HOME);
 		} catch (error) {
 			// Manejar cualquier error que ocurra durante la solicitud
 			console.error("Error al iniciar sesión:", error);

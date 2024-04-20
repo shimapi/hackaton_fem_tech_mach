@@ -2,11 +2,14 @@ import { useState } from "react";
 import { TextField, Button, Typography, Container } from "@mui/material";
 import MachIgm from "../components/Card";
 import { validateRut } from "rutlib";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import PathConstants from "../Routes/PathConstants";
 import axios from "axios";
 
-const Identification = ({ name, lastName, phone, email }) => {
+const Identification = () => {
+	const location = useLocation();
+	const { newUser } = location.state;
+
 	const [rut, setRut] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
@@ -24,18 +27,17 @@ const Identification = ({ name, lastName, phone, email }) => {
 
 		try {
 			const response = await axios.post("http://localhost:8080/user/register", {
-				name: name,
-				lastName: lastName,
+				name: newUser.name,
+				lastName: newUser.lastName,
 				idDocument: rut,
-				phone: phone,
-				email: email,
+				phone: newUser.phone,
+				email: newUser.email,
 				password: password,
 			});
 
 			// Manejar la respuesta del servidor
 			console.log("Usuario registrado:", response.data);
-			navigate("/home");
-
+			navigate(PathConstants.HOME);
 		} catch (error) {
 			console.error("Error al registrar usuario:", error);
 		}
@@ -76,17 +78,15 @@ const Identification = ({ name, lastName, phone, email }) => {
 						placeholder="Ingresa una contraseña segura."
 						type="password"
 					/>
-					<Link to={PathConstants.HOME}>
-						<Button
-							type="submit"
-							variant="contained"
-							color="primary"
-							fullWidth
-							disabled={!validateRut(rut)}
-						>
-							Registrarme
-						</Button>
-					</Link>
+					<Button
+						type="submit"
+						variant="contained"
+						color="primary"
+						fullWidth
+						disabled={!validateRut(rut)}
+					>
+						Registrarme
+					</Button>
 				</form>
 			</Container>
 		</>
