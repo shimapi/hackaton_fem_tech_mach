@@ -1,8 +1,9 @@
 const PathConstants = {
 	// Internal links
-	HOME: "/",
+	INITIAL: "/",
 	LOGIN: "/login",
 	REGISTER: "/register",
+	HOME: "/home",
 };
 
 export default PathConstants;

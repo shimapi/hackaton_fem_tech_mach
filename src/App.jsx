@@ -8,6 +8,7 @@ import Register from "./views/Register";
 import Home from "./views/Home";
 import Layout from "./views/Layout";
 import PathConstants from "./Routes/PathConstants";
+import Initial from "./views/Initial";
 
 function App() {
   const BrowserRouter = createBrowserRouter([
@@ -18,8 +19,8 @@ function App() {
 
       children: [
         {
-          path: PathConstants.HOME,
-          element: <Home />,
+          path: PathConstants.INITIAL,
+          element: <Initial />,
         },
         {
           path: PathConstants.REGISTER,
@@ -28,6 +29,10 @@ function App() {
         {
           path: PathConstants.LOGIN,
           element: <Login />,
+        },
+        {
+          path: PathConstants.HOME,
+          element: <Home />,
         },
         {
           path: "*",
