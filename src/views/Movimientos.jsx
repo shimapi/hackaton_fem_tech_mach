@@ -32,7 +32,7 @@ export default function Movimientos() {
 					<TableHead backgroundColor="secondary">
 						<TableRow>
 							<TableCell>Fecha</TableCell>
-							<TableCell align="right">Pago enviado</TableCell>
+							<TableCell align="right">Movimiento</TableCell>
 							<TableCell align="right">Monto</TableCell>
 						</TableRow>
 					</TableHead>
