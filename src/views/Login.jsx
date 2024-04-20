@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Typography, TextField, Button } from "@mui/material";
 import MachIgm from "../components/Card";
 import axios from "axios";
@@ -7,6 +7,7 @@ import axios from "axios";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 
 	const handleEmailChange = (event) => {
 		setEmail(event.target.value);
@@ -25,8 +26,8 @@ const Login = () => {
 
 			// Manejar la respuesta del servidor
 			console.log("Respuesta del servidor:", response.data);
-			localStorage.setItem(response.data);
-			window.location.href = "/home";
+			localStorage.setItem("user", response.data);
+			navigate("/home");
 		} catch (error) {
 			// Manejar cualquier error que ocurra durante la solicitud
 			console.error("Error al iniciar sesión:", error);
@@ -53,11 +54,9 @@ const Login = () => {
 					fullWidth
 					margin="normal"
 				/>
-				<Link to="/home">
-					<Button type="submit" variant="contained" color="primary" fullWidth>
-						Ingresar
-					</Button>
-				</Link>
+				<Button type="submit" variant="contained" color="primary" fullWidth>
+					Ingresar
+				</Button>
 			</form>
 			<div style={{ marginBottom: "20px" }}></div>
 			<Link to="/otra-ruta">
