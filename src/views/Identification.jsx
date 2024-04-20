@@ -7,10 +7,16 @@ import PathConstants from "../Routes/PathConstants";
 
 const Identification = () => {
 	const [rut, setRut] = useState("");
+	const [password, setPassword] = useState("");
+
+	const handlePasswordChange = (event) => {
+		setPassword(event.target.value);
+	};
 
 	const handleRutChange = (event) => {
 		setRut(event.target.value);
 	};
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// Aquí puedes enviar los datos del formulario a través de una solicitud HTTP
@@ -20,8 +26,8 @@ const Identification = () => {
 		<>
 			<Container maxWidth="sm" style={{ marginTop: "50px" }}>
 				<MachIgm />
-				<Typography variant="h5" align="center" gutterBottom>
-					¿Cuál es tu RUT?
+				<Typography variant="body1" align="center">
+					Necesitamos verificar tu identidad
 				</Typography>
 				<form onSubmit={handleSubmit}>
 					<TextField
@@ -33,10 +39,23 @@ const Identification = () => {
 						placeholder="Ingresa tu RUT"
 					/>
 					{validateRut(rut) ? (
-						<p style={{ color: "green" }}>RUT válido</p>
+						<Typography style={{ color: "green" }} gutterBottom>
+							RUT válido
+						</Typography>
 					) : (
-						<p style={{ color: "red" }}>Por favor ingresa un rut Válido</p>
+						<Typography style={{ color: "red" }} gutterBottom>
+							Por favor ingresa un rut Válido
+						</Typography>
 					)}
+					<TextField
+						label="Contraseña"
+						value={password}
+						onChange={handlePasswordChange}
+						fullWidth
+						margin="normal"
+						placeholder="Ingresa una contraseña segura"
+						type="password"
+					/>
 					<Link to={PathConstants.HOME}>
 						<Button
 							type="submit"

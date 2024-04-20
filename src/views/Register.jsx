@@ -2,10 +2,12 @@ import { useState } from "react";
 import { TextField, Button, Typography } from "@mui/material";
 import MachIgm from "../components/Card";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PathConstants from "../Routes/PathConstants";
 
 const Register = () => {
+	const navigate = useNavigate();
+
 	const [name, setName] = useState("");
 	const [lastname, setLastname] = useState("");
 	const [email, setEmail] = useState("");
@@ -30,6 +32,7 @@ const Register = () => {
 		console.log("lastname:", lastname);
 		console.log("telefono:", phone);
 		console.log("email:", email);
+		navigate(PathConstants.IDENTIFICATION)
 	};
 
 	const validateEmail = (email) => {
@@ -87,17 +90,15 @@ const Register = () => {
 						margin="normal"
 						error={!validateEmail(email)}
 					/>
-					<Link to={PathConstants.IDENTIFICATION}>
-						<Button
-							type="submit"
-							variant="contained"
-							color="primary"
-							fullWidth
-							disabled={!allFieldsAreValid()}
-						>
-							Continuar
-						</Button>
-					</Link>
+					<Button
+						type="submit"
+						variant="contained"
+						color="primary"
+						fullWidth
+						disabled={!allFieldsAreValid()}
+					>
+						Continuar
+					</Button>
 				</form>
 			</Container>
 		</>
