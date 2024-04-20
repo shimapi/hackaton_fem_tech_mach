@@ -24,8 +24,8 @@ const Identification = () => {
 
 	const allFieldsAreValid = () => {
 		return (
-			validateRut(rut) && password.length>8
-			);
+			validateRut(rut) && password.length > 7
+		);
 	};
 
 	const handleSubmit = async (event) => {
@@ -64,17 +64,19 @@ const Identification = () => {
 						onChange={handleRutChange}
 						fullWidth
 						margin="normal"
-						placeholder="Ingresa tu RUT"
+						placeholder="Ingresa tu RUT con dígito verificador"
 					/>
-					{validateRut(rut) ? (
-						<Typography style={{ color: "green" }} gutterBottom>
-							RUT válido.
-						</Typography>
-					) : (
-						<Typography style={{ color: "red" }} gutterBottom>
-							Por favor ingresa un RUT válido.
-						</Typography>
-					)}
+					{rut.length > 8 && (
+						validateRut(rut) ? (
+							<Typography style={{ color: "green" }} gutterBottom>
+								RUT válido.
+							</Typography>
+						) : (
+							<Typography style={{ color: "red" }} gutterBottom>
+								Por favor ingresa un RUT válido.
+							</Typography>
+						))}
+
 					<TextField
 						label="Contraseña"
 						value={password}

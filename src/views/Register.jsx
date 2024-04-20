@@ -91,12 +91,12 @@ const Register = () => {
 						placeholder="Ingresa tu celular"
 					/>
 					<TextField
-						label="e-mail"
+						label="Correo electrónico"
 						value={email}
 						onChange={handleEmailChange}
 						fullWidth
 						margin="normal"
-						error={!validateEmail(email)}
+						error={email.length>0 && !validateEmail(email)}
 					/>
 					<Button
 						type="submit"
