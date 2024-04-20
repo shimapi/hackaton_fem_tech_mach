@@ -1,51 +1,50 @@
-import React, { useState } from 'react';
-import { TextField, Button } from '@mui/material';
+import { useState } from "react";
+import { TextField, Button } from "@mui/material";
 import MachIgm from "../components/Card";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+	const handleEmailChange = (event) => {
+		setEmail(event.target.value);
+	};
+	const handlePasswordChange = (event) => {
+		setPassword(event.target.value);
+	};
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Aquí puedes enviar los datos del formulario a través de una solicitud HTTP
-    console.log('Email:', email);
-    console.log('Pass:', password);
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		// Aquí puedes enviar los datos del formulario a través de una solicitud HTTP
+		console.log("Email:", email);
+		console.log("Pass:", password);
+	};
 
-  };
-
-  return (
-    <>
-      <MachIgm />
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Correo electrónico"
-          value={email}
-          onChange={handleEmailChange}
-          fullWidth
-          margin="normal"
-          placeholder="email@example.com"
-        />
-        <TextField
-          label="Contraseña"
-          value={password}
-          onChange={handlePasswordChange}
-          fullWidth
-          margin="normal"
-        />
-        <Button type="submit" variant="contained" color="primary" fullWidth>
-          Ingresar
-        </Button>
-      </form>
-    </>
-  );
+	return (
+		<>
+			<MachIgm />
+			<form onSubmit={handleSubmit}>
+				<TextField
+					label="Correo electrónico"
+					value={email}
+					onChange={handleEmailChange}
+					fullWidth
+					margin="normal"
+					placeholder="email@example.com"
+				/>
+				<TextField
+					label="Contraseña"
+					value={password}
+					onChange={handlePasswordChange}
+					fullWidth
+					margin="normal"
+				/>
+				<Button type="submit" variant="contained" color="primary" fullWidth>
+					Ingresar
+				</Button>
+			</form>
+		</>
+	);
 };
 
 export default Login;
